@@ -43,38 +43,8 @@ COMMON_PRIVATE_INLINE void operator delete[](void* p) { free(p); }
 COMMON_PRIVATE_INLINE void operator delete[](void* p, const std::nothrow_t&) throw() { free(p); }
 #endif
 
-/*        // core navi keys
-        Key_Gesture_Key_Range_Start = 0x01200000,
-        Key_CoreNavi_Back = 0x01200001,
-        Key_CoreNavi_Menu = 0x01200002,
-        Key_CoreNavi_QuickLaunch = 0x01200003,
-        Key_CoreNavi_Launcher = 0x01200004,
-        Key_CoreNavi_SwipeDown = 0x01200005,
-        Key_CoreNavi_Next = 0x01200006,
-        Key_CoreNavi_Previous = 0x01200007,
-        Key_CoreNavi_Home = 0x01200008,
-        Key_CoreNavi_Meta = 0x01200009,
-        Key_Flick = 0x01200010,
-        Key_Gesture_Key_Range_End = 0x01200099,
-
-        Key_Slider = 0x01200100,
-        Key_Optical = 0x01200101,
-        Key_Ringer = 0x01200102,
-        Key_Power = 0x01200103, // Neither Key_PowerDown nor Key_PowerOff make sense for us to use.
-        Key_HeadsetButton = 0x01200104,
-        Key_Headset = 0x01200105,
-        Key_HeadsetMic = 0x01200106,
-        Key_Keyboard = 0x01200107,
-
-        // keys for avrcp
-        Key_MediaRepeatAll = 0x01200200,
-        Key_MediaRepeatTrack = 0x01200201,
-        Key_MediaRepeatNone = 0x01200202,
-        Key_MediaShuffleOn = 0x01200203,
-        Key_MediaShuffleOff = 0x01200204,
-*/
 namespace Qt {
-
+static const Qt::Key Key_Gesture_Key_Range_Start = static_cast<Qt::Key>(0x01200000);
 static const Qt::Key Key_CoreNavi_Back = static_cast<Qt::Key>(0x01200001);
 static const Qt::Key Key_CoreNavi_Menu = static_cast<Qt::Key>(0x01200002);
 static const Qt::Key Key_CoreNavi_QuickLaunch = static_cast<Qt::Key>(0x01200003);
@@ -83,9 +53,24 @@ static const Qt::Key Key_CoreNavi_SwipeDown = static_cast<Qt::Key>(0x01200005);
 static const Qt::Key Key_CoreNavi_Next = static_cast<Qt::Key>(0x01200006);
 static const Qt::Key Key_CoreNavi_Previous = static_cast<Qt::Key>(0x01200007);
 static const Qt::Key Key_CoreNavi_Home = static_cast<Qt::Key>(0x01200008);
+static const Qt::Key Key_CoreNavi_Meta = static_cast<Qt::Key>(0x01200009);
 
+static const Qt::Key Key_Flick = static_cast<Qt::Key>(0x01200010);
+static const Qt::Key Key_Gesture_Key_Range_End = static_cast<Qt::Key>(0x01200099);
+static const Qt::Key Key_Slider = static_cast<Qt::Key>(0x01200100);
+static const Qt::Key Key_Optical = static_cast<Qt::Key>(0x01200101);
+static const Qt::Key Key_Ringer = static_cast<Qt::Key>(0x01200102);
 static const Qt::Key Key_Power = static_cast<Qt::Key>(0x01200103);
+static const Qt::Key Key_HeadsetButton = static_cast<Qt::Key>(0x01200104);
+static const Qt::Key Key_Headset = static_cast<Qt::Key>(0x01200105);
+static const Qt::Key Key_HeadsetMic = static_cast<Qt::Key>(0x01200106);
 static const Qt::Key Key_Keyboard = static_cast<Qt::Key>(0x01200107);
+
+static const Qt::Key Key_MediaRepeatAll = static_cast<Qt::Key>(0x01200200);
+static const Qt::Key Key_MediaRepeatTrack = static_cast<Qt::Key>(0x01200201);
+static const Qt::Key Key_MediaRepeatNone = static_cast<Qt::Key>(0x01200202);
+static const Qt::Key Key_MediaShuffleOn = static_cast<Qt::Key>(0x01200203);
+static const Qt::Key Key_MediaShuffleOff = static_cast<Qt::Key>(0x01200204);
 
 }
 
