@@ -73,6 +73,7 @@ COMMON_PRIVATE_INLINE void operator delete[](void* p, const std::nothrow_t&) thr
         Key_MediaShuffleOn = 0x01200203,
         Key_MediaShuffleOff = 0x01200204,
 */
+namespace Qt {
 
 static const Qt::Key Key_CoreNavi_Back = static_cast<Qt::Key>(0x01200001);
 static const Qt::Key Key_CoreNavi_Menu = static_cast<Qt::Key>(0x01200002);
@@ -85,5 +86,7 @@ static const Qt::Key Key_CoreNavi_Home = static_cast<Qt::Key>(0x01200008);
 
 static const Qt::Key Key_Power = static_cast<Qt::Key>(0x01200103);
 static const Qt::Key Key_Keyboard = static_cast<Qt::Key>(0x01200107);
+
+}
 
 #endif // __COMMON_H__

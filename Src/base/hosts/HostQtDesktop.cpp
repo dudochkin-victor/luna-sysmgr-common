@@ -149,9 +149,9 @@ public:
 
 		if ((velocity.y() * velocity.y()) > (velocity.x() * velocity.x())) {
            if (velocity.y() > 0)
-               postGesture(Key_CoreNavi_SwipeDown);
+               postGesture(KEYS::Key_CoreNavi_SwipeDown);
            else
-               postGesture(Key_CoreNavi_Launcher);
+               postGesture(KEYS::Key_CoreNavi_Launcher);
 			m_seenGesture = true;
 		}
 	}
@@ -201,18 +201,18 @@ public:
 				// Horizontal movement
 				if (deltaX > 0) {
 					if (deltaX > width()/2) {
-                        postGesture(Key_CoreNavi_Next);
+                        postGesture(KEYS::Key_CoreNavi_Next);
 					}
 					else {
-                        postGesture(Key_CoreNavi_Menu);
+                        postGesture(KEYS::Key_CoreNavi_Menu);
 					}
 				}
 				else {
 					if (-deltaX > width()/2) {
-                        postGesture(Key_CoreNavi_Previous);
+                        postGesture(KEYS::Key_CoreNavi_Previous);
 					}
 					else {
-                        postGesture(Key_CoreNavi_Back);
+                        postGesture(KEYS::Key_CoreNavi_Back);
 					}
 				}
 			}
@@ -246,14 +246,14 @@ public:
 private Q_SLOTS:
 
 	void slotHomeButtonClicked() {
-        postGesture(Key_CoreNavi_Home);
+        postGesture(KEYS::Key_CoreNavi_Home);
 	}
 
 	void slotQuickLaunchGesture() {
 		m_quickLaunch = true;
 		m_seenGesture = true;
 		viewport(m_mainView)->grabMouse();
-        postGesture(Key_CoreNavi_QuickLaunch);
+        postGesture(KEYS::Key_CoreNavi_QuickLaunch);
 		postMouseUpdate(m_currentMousePos);
 	}
 
@@ -330,28 +330,28 @@ protected:
 			case Qt::Key_Home:
 				window = QApplication::focusWidget();
 				if (window) {
-                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyPress, Key_CoreNavi_Home, 0));
+                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyPress, KEYS::Key_CoreNavi_Home, 0));
 				}
 				handled = true;
 				break;
 			case Qt::Key_Escape:
 				window = QApplication::focusWidget();
 				if (window) {
-                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyPress, Key_CoreNavi_Back, 0));
+                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyPress, KEYS::Key_CoreNavi_Back, 0));
 				}
 				handled = true;
 				break;
 			case Qt::Key_End:
 				window = QApplication::focusWidget();
 				if (window) {
-                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyPress, Key_CoreNavi_Launcher, 0));
+                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyPress, KEYS::Key_CoreNavi_Launcher, 0));
 				}
 				handled = true;
 				break;
 			case Qt::Key_Pause:
 				window = QApplication::focusWidget();
 				if (window) {
-                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyPress, Key_HardPower, keyEvent->modifiers()));
+                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyPress, KEYS::Key_HardPower, keyEvent->modifiers()));
 				}
 				handled = true;
 				break;
@@ -395,35 +395,35 @@ protected:
 			case Qt::Key_Home:
 				window = QApplication::focusWidget();
 				if (window) {
-                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyRelease, Key_CoreNavi_Home, 0));
+                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyRelease, KEYS::Key_CoreNavi_Home, 0));
 				}
 				handled = true;
 				break;
 			case Qt::Key_Escape:
 				window = QApplication::focusWidget();
 				if (window) {
-                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyRelease, Key_CoreNavi_Back, 0));
+                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyRelease, KEYS::Key_CoreNavi_Back, 0));
 				}
 				handled = true;
 				break;
 			case Qt::Key_End:
 				window = QApplication::focusWidget();
 				if (window) {
-                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyRelease, Key_CoreNavi_Launcher, 0));
+                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyRelease, KEYS::Key_CoreNavi_Launcher, 0));
 				}
 				handled = true;
 				break;
 			case Qt::Key_Pause:
 				window = QApplication::focusWidget();
 				if (window) {
-                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyRelease, Key_HardPower, keyEvent->modifiers()));
+                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyRelease, KEYS::Key_HardPower, keyEvent->modifiers()));
 				}
 				handled = true;
 				break;
 			case Qt::Key_F2:
 				window = QApplication::focusWidget();
 				if (window) {
-                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyRelease, Key_Keyboard, keyEvent->modifiers()));
+                    QApplication::postEvent(window, new QKeyEvent(QEvent::KeyRelease, KEYS::Key_Keyboard, keyEvent->modifiers()));
                 }
 				handled = true;
 				break;
